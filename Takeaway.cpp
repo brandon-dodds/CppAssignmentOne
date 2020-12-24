@@ -15,8 +15,8 @@ Good luck!
 ------------------------------------------------------ */
 #define _CRT_SECURE_NO_WARNINGS
 
-#include "Menu.h"
-#include "Order.h"
+#include "ItemLists/Menu.h"
+#include "ItemLists/Order.h"
 #include "Items/Item.h"
 
 #include <iostream>
