@@ -3,4 +3,4 @@ project(CppAssignmentOne)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(CppAssignmentOne Takeaway.cpp Item.cpp Item.h Appetiser.cpp Appetiser.h MainCourse.cpp MainCourse.h Beverage.cpp Beverage.h)
+add_executable(CppAssignmentOne Takeaway.cpp Items/Item.cpp Items/Item.h Items/Appetiser.cpp Items/Appetiser.h Items/MainCourse.cpp Items/MainCourse.h Items/Beverage.cpp Items/Beverage.h)

@@ -3,7 +3,11 @@
 
 
 class Beverage : public Item {
-
+public:
+    float abv;
+    float volume;
+    bool isAlcoholic();
+    std::string toString() override;
 };
 
 
