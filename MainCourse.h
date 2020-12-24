@@ -1,0 +1,9 @@
+#ifndef CPPASSIGNMENTONE_MAINCOURSE_H
+#define CPPASSIGNMENTONE_MAINCOURSE_H
+
+class MainCourse : public Item {
+
+};
+
+
+#endif //CPPASSIGNMENTONE_MAINCOURSE_H
