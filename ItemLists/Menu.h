@@ -6,8 +6,12 @@
 #define CPPASSIGNMENTONE_MENU_H
 
 
-class Menu {
+#include "ItemList.h"
 
+class Menu : public ItemList {
+public:
+    explicit Menu(const std::string& menuTxtInput);
+    std::string toString() override;
 };
 
 

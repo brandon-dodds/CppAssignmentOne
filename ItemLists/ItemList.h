@@ -2,8 +2,13 @@
 #define CPPASSIGNMENTONE_ITEMLIST_H
 
 
-class ItemList {
+#include <vector>
+#include "../Items/Item.h"
 
+class ItemList {
+public:
+    std::vector<Item*> items;
+    virtual std::string toString();
 };
 
 

@@ -3,8 +3,13 @@
 #define CPPASSIGNMENTONE_ORDER_H
 
 
-class Order {
+#include "ItemList.h"
 
+class Order : public ItemList{
+public:
+    std::string toString() override;
+
+    void add(Item *pItem);
 };
 
 
