@@ -13,5 +13,8 @@ std::string Menu::toString() {
 Menu::Menu(const std::string& menuTxtInput) {
     std::ifstream myFile(menuTxtInput);
     if(!myFile.is_open()) throw std::runtime_error("Could not open file!");
-    std::cout << "Hello world!";
+    std::string myLine;
+    while(getline(myFile, myLine)){
+        std::cout << myLine << '\n';
+    }
 }
