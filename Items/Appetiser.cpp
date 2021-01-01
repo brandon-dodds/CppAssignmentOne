@@ -3,8 +3,9 @@
 
 #include <utility>
 
-std::string Appetiser::toString(){
-    return this->name + std::to_string(this->price) + std::to_string(this->calories) + this->shareable + this->twoForOne;
+std::string Appetiser::toString() {
+    return this->name + std::to_string(this->price) + std::to_string(this->calories) + this->shareable +
+           this->twoForOne;
 }
 
 Appetiser::Appetiser(std::string name, float price, int calories, std::string shareable, std::string twoForOne) {

@@ -10,7 +10,8 @@
 
 class Menu : public ItemList {
 public:
-    explicit Menu(const std::string& menuTxtInput);
+    explicit Menu(const std::string &menuTxtInput);
+
     std::string toString() override;
 };
 

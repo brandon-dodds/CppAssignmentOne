@@ -8,6 +8,7 @@ public:
     int calories;
     float price;
     std::string name;
+
     virtual std::string toString();
 };
 

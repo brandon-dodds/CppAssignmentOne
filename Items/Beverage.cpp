@@ -9,7 +9,7 @@ bool Beverage::isAlcoholic() {
     return false;
 }
 
-Beverage::Beverage(const std::string& name, float price, int calories, int volume, float abv) {
+Beverage::Beverage(const std::string &name, float price, int calories, int volume, float abv) {
     this->name = name;
     this->price = price;
     this->calories = calories;

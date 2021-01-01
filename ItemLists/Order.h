@@ -5,7 +5,7 @@
 
 #include "ItemList.h"
 
-class Order : public ItemList{
+class Order : public ItemList {
 public:
     std::string toString() override;
 

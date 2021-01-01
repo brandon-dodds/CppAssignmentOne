@@ -8,6 +8,7 @@ public:
 
     std::string shareable;
     std::string twoForOne;
+
     std::string toString() override;
 };
 
