@@ -4,8 +4,9 @@
 
 class Beverage : public Item {
 public:
+    Beverage(const std::string& name, float price, int calories, int volume, float abv);
     float abv;
-    float volume;
+    int volume;
     bool isAlcoholic();
     std::string toString() override;
 };
