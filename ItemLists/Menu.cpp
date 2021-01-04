@@ -13,7 +13,12 @@
 using namespace std;
 
 string Menu::toString() {
-    return std::to_string(items.size());
+    std::string MenuReturn("------------Appetisers--------- \n");
+    int MenuIndex = 0;
+    while(auto *appetiser = dynamic_cast<Appetiser*>(items[MenuIndex])){
+        MenuIndex++;
+    }
+    return MenuReturn;
 }
 
 Menu::Menu(const string &menuTxtInput) {
