@@ -2,17 +2,30 @@
 #include "Appetiser.h"
 
 #include <utility>
+#include <sstream>
+#include <iomanip>
 
-std::string Appetiser::toString() {
-    return this->name + std::to_string(this->price) + std::to_string(this->calories) + this->shareable +
-           this->twoForOne;
+using namespace std;
+
+string Appetiser::toString() {
+    stringstream stream;
+    stream << fixed << setprecision(2) << price;
+    string returnString;
+    returnString += name + ": £" + stream.str() + ", " + to_string(calories) + "cal ";
+    if(shareable == "y"){
+        returnString += "(shareable)";
+    }
+    if (twoForOne == "y"){
+        returnString += "(2-4-1)";
+    }
+    return returnString;
 }
 
-Appetiser::Appetiser(std::string name, float price, int calories, std::string shareable, std::string twoForOne) {
-    this->name = std::move(name);
+Appetiser::Appetiser(string name, float price, int calories, string shareable, string twoForOne) {
+    this->name = move(name);
     this->price = price;
     this->calories = calories;
-    this->shareable = std::move(shareable);
-    this->twoForOne = std::move(twoForOne);
+    this->shareable = move(shareable);
+    this->twoForOne = move(twoForOne);
 }
 
