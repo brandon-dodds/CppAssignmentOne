@@ -12,8 +12,6 @@ string Menu::toString() {
     string MenuReturn("------------Appetisers--------- \n");
     int MenuIndex = 0;
     while(auto *appetiser = dynamic_cast<Appetiser*>(items[MenuIndex])){
-        stringstream stream;
-        stream << fixed << setprecision(2) << appetiser->price;
         MenuReturn += '(' + to_string(MenuIndex + 1) + ") " + appetiser->toString() + '\n';
         MenuIndex++;
     }
