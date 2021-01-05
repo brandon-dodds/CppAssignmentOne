@@ -9,11 +9,26 @@
 using namespace std;
 
 string Menu::toString() {
-    string MenuReturn("------------Appetisers--------- \n");
+    string MenuReturn("----------------------Appetisers------------------------- \n");
     int MenuIndex = 0;
     while(auto *appetiser = dynamic_cast<Appetiser*>(items[MenuIndex])){
         MenuReturn += '(' + to_string(MenuIndex + 1) + ") " + appetiser->toString() + '\n';
         MenuIndex++;
+    }
+    MenuReturn+= "----------------------Main Course------------------------- \n";
+    while(auto *mainCourse = dynamic_cast<MainCourse*>(items[MenuIndex])){
+        MenuReturn += '(' + to_string(MenuIndex + 1) + ") " + mainCourse->toString() + '\n';
+        MenuIndex++;
+    }
+    MenuReturn += "----------------------Beverages------------------------- \n";
+    while (auto *beverage = dynamic_cast<Beverage*>(items[MenuIndex])){
+        MenuReturn += '(' + to_string(MenuIndex + 1) + ") " + beverage->toString() + '\n';
+        if(MenuIndex < items.size() - 1){
+            MenuIndex++;
+        }
+        else{
+            break;
+        }
     }
     return MenuReturn;
 }

@@ -1,8 +1,22 @@
+#include <sstream>
+#include <iomanip>
 #include "Item.h"
 #include "Beverage.h"
 
+using namespace std;
 std::string Beverage::toString() {
-    return Item::toString();
+    stringstream beveragePrice;
+    string returnBev;
+    beveragePrice << fixed << setprecision(2) << price;
+    returnBev += name + ": £" + beveragePrice.str() + ", " + to_string(calories) + " cal ("
+    + to_string(volume) + "ml";
+    if(abv != 0){
+        stringstream beverageAbv;
+        beverageAbv << fixed << setprecision(1) << abv;
+        returnBev += ", " + beverageAbv.str() + "% abv";
+    }
+    returnBev += ")";
+    return returnBev;
 }
 
 bool Beverage::isAlcoholic() {

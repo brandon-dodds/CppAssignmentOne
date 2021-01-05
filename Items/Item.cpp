@@ -1,5 +1,11 @@
+#include <sstream>
+#include <iomanip>
 #include "Item.h"
 
-std::string Item::toString() {
-    return this->name + std::to_string(this->price) + std::to_string(this->calories);
+using namespace std;
+
+string Item::toString() {
+    stringstream stringPrice;
+    stringPrice << fixed << setprecision(2) << price;
+    return name + ": £" + stringPrice.str() + ", " + to_string(calories) + " cal";
 }

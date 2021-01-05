@@ -11,7 +11,7 @@ string Appetiser::toString() {
     stringstream stream;
     stream << fixed << setprecision(2) << price;
     string returnString;
-    returnString += name + ": £" + stream.str() + ", " + to_string(calories) + "cal ";
+    returnString += name + ": £" + stream.str() + ", " + to_string(calories) + " cal ";
     if(shareable == "y"){
         returnString += "(shareable)";
     }
