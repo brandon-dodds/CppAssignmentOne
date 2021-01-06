@@ -1,5 +1,4 @@
 #include <iostream>
-#include <sstream>
 #include <iomanip>
 #include "Order.h"
 #include "../Items/Appetiser.h"
@@ -41,7 +40,7 @@ string Order::toString() {
 
 void Order::add(Item *pItem) {
     items.push_back(pItem);
-    cout << pItem->name << " Added to order! \n";
+    cout << pItem->name << " added to order! \n";
 }
 
 void Order::remove(int userInputIndex){
