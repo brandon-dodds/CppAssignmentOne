@@ -66,11 +66,11 @@ int main()
 		}
 		else if (command.compare("remove") == 0)
 		{
-
+            order.remove(stoi(parameters[1]) - 1);
 		}
 		else if (command.compare("checkout") == 0)
 		{
-
+            cout << order.toString();
 		}
 		else if (command.compare("help") == 0)
 		{
