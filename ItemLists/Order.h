@@ -9,6 +9,8 @@ public:
     std::string toString() override;
 
     void add(Item *pItem);
+    float calculateTotal();
+    std::string printReceipt();
 };
 
 

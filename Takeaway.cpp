@@ -58,7 +58,7 @@ int main()
 		}
 		else if (command.compare("add") == 0)
 		{
-			Item* choice; // you need to instantiate this using the menu object!
+			Item* choice = menu.items[stoi(parameters[1]) - 1];  // you need to instantiate this using the menu object!
 			order.add(choice);
 
 			// You may also wish to implement the ability to add multiple items at once!
