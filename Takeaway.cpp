@@ -70,7 +70,13 @@ int main()
 		}
 		else if (command.compare("checkout") == 0)
 		{
-            cout << order.toString();
+		    string userOrder = order.toString();
+            cout << userOrder;
+            string userInput;
+            cin >> userInput;
+            if (userInput == "y"){
+                Order::printReceipt(userOrder);
+            }
 		}
 		else if (command.compare("help") == 0)
 		{

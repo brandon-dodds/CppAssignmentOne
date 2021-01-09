@@ -10,9 +10,10 @@ public:
 
     void add(Item *pItem);
     std::vector<float> calculateTotal();
-    std::string printReceipt();
-
+    static void printReceipt(const std::string& fileString);
     void remove(int userInputIndex);
+
+private:
 };
 
 

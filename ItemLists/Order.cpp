@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 #include "Order.h"
 #include "../Items/Appetiser.h"
 #include "../Items/MainCourse.h"
@@ -65,4 +66,11 @@ vector<float> Order::calculateTotal() {
         total -= saving241;
     }
     return vector<float>{total, saving241};
+}
+
+void Order::printReceipt(const std::string& fileString) {
+    ofstream myFile;
+    myFile.open("receipt.txt");
+    myFile << fileString;
+    myFile.close();
 }
