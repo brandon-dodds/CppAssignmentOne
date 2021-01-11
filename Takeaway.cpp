@@ -58,6 +58,9 @@ int main()
 		}
 		else if (command.compare("add") == 0)
 		{
+		    if(stoi(parameters[1]) > menu.items.size()){
+                throw invalid_argument("Received number too large!");
+		    }
 			Item* choice = menu.items[stoi(parameters[1]) - 1];  // you need to instantiate this using the menu object!
 			order.add(choice);
 
@@ -66,6 +69,9 @@ int main()
 		}
 		else if (command.compare("remove") == 0)
 		{
+            if(stoi(parameters[1]) > order.items.size()){
+                throw invalid_argument("Received number too large!");
+            }
             order.remove(stoi(parameters[1]) - 1);
 		}
 		else if (command.compare("checkout") == 0)
