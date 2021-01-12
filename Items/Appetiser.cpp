@@ -31,10 +31,6 @@ Appetiser::Appetiser(string name, float price, int calories, string shareable, s
     this->twoForOne = move(twoForOne);
 }
 
-std::string Appetiser::getShareable() {
-    return shareable;
-}
-
 std::string Appetiser::getTwoForOne() {
     return twoForOne;
 }

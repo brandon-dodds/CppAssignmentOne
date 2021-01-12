@@ -3,8 +3,6 @@
 #include <fstream>
 #include "Order.h"
 #include "../Items/Appetiser.h"
-#include "../Items/MainCourse.h"
-#include "../Items/Beverage.h"
 
 using namespace std;
 

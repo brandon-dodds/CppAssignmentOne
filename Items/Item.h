@@ -10,7 +10,7 @@ protected:
     std::string name;
 public:
     virtual std::string toString();
-    int getCalories() const;
+
     float getPrice() const;
     std::string getName();
 };

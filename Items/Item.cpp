@@ -13,10 +13,6 @@ string Item::toString() {
     return name + ": £" + stringPrice.str() + ", " + to_string(calories) + " cal";
 }
 
-int Item::getCalories() const {
-    return calories;
-}
-
 float Item::getPrice() const {
     return price;
 }
