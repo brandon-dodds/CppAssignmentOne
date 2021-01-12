@@ -5,11 +5,11 @@
 #include "ItemList.h"
 
 class Order : public ItemList {
+private:
+    std::vector<float> calculateTotal();
 public:
     std::string toString() override;
-
     void add(Item *pItem);
-    std::vector<float> calculateTotal();
     static void printReceipt(const std::string& fileString);
     void remove(int userInputIndex);
 

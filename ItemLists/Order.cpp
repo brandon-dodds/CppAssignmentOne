@@ -9,21 +9,15 @@
 using namespace std;
 
 string Order::toString() {
+    /*
+     * Makes the string needed for the checkout operation. Uses the Order itemlist in a decent way to create this.
+     */
     string OrderReturn("==== Checkout ===== \n");
     vector<float> checkout = calculateTotal();
     int orderIndex = 0;
     for(auto & item : items){
         orderIndex += 1;
-        if(auto *appetiser = dynamic_cast<Appetiser *>(item)){
-            OrderReturn+= "("  + to_string(orderIndex) + ") " + appetiser->toString() + '\n';
-        }
-        else if (auto *mainCourse = dynamic_cast<MainCourse *>(item)){
-            OrderReturn+= "("  + to_string(orderIndex) + ") " + mainCourse->toString() + '\n';
-        }
-        else {
-            auto *beverage = dynamic_cast<Beverage *>(item);
-            OrderReturn+= "("  + to_string(orderIndex) + ") " + beverage->toString() + '\n';
-        }
+        OrderReturn+= "("  + to_string(orderIndex) + ") " + item->toString() + '\n';
     }
     OrderReturn+= "--------- \n";
     if (checkout[1] != 0){
@@ -40,25 +34,35 @@ string Order::toString() {
 }
 
 void Order::add(Item *pItem) {
+    /*
+     * Adds an item based on what is in the menu list to the orders list.
+     */
     items.push_back(pItem);
-    cout << pItem->name << " added to order! \n";
+    cout << pItem->getName() << " added to order! \n";
 }
 
 void Order::remove(int userInputIndex){
-    cout << items[userInputIndex]->name + " have been removed! \n";
+    /*
+     * Removes the object from the items list.
+     */
+    cout << items[userInputIndex]->getName() + " have been removed! \n";
     items.erase(items.begin() + userInputIndex);
 }
 
 vector<float> Order::calculateTotal() {
+    /*
+     * Calculates the total and returns a vector with the first element being the total
+     * and the second being the total savings.
+     */
     float total = 0;
     int total241 = 0;
     float saving241 = 0;
     for(auto item : items) {
-        total += item->price;
+        total += item->getPrice();
         if (auto *appetiser = dynamic_cast<Appetiser *>(item)) {
-            if (appetiser->twoForOne == "y") {
+            if (appetiser->getTwoForOne() == "y") {
                 total241 += 1;
-                saving241 = appetiser->price;
+                saving241 = appetiser->getPrice();
             }
         }
     }
@@ -69,6 +73,10 @@ vector<float> Order::calculateTotal() {
 }
 
 void Order::printReceipt(const std::string& fileString) {
+    /*
+     * Simple file handling.
+     * Outputs the checkout to the file.
+     */
     ofstream myFile;
     myFile.open("receipt.txt");
     myFile << fileString;

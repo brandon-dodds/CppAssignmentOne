@@ -5,6 +5,9 @@
 
 using namespace std;
 std::string Beverage::toString() {
+    /*
+     * Creates the overridden toString.
+     */
     stringstream beveragePrice;
     string returnBev;
     beveragePrice << fixed << setprecision(2) << price;

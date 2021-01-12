@@ -3,14 +3,12 @@
 
 
 class Beverage : public Item {
-public:
-    Beverage(const std::string &name, float price, int calories, int volume, float abv);
-
+private:
     float abv;
     int volume;
-
+public:
+    Beverage(const std::string &name, float price, int calories, int volume, float abv);
     bool isAlcoholic();
-
     std::string toString() override;
 };
 

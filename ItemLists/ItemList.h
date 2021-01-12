@@ -6,9 +6,11 @@
 #include "../Items/Item.h"
 
 class ItemList {
-public:
+protected:
     std::vector<Item *> items;
+public:
     virtual std::string toString();
+    std::vector<Item *> getItems();
 };
 
 

@@ -4,12 +4,15 @@
 #include <string>
 
 class Item {
-public:
+protected:
     int calories;
     float price;
     std::string name;
-
+public:
     virtual std::string toString();
+    int getCalories() const;
+    float getPrice() const;
+    std::string getName();
 };
 
 #endif //CPPASSIGNMENTONE_ITEM_H

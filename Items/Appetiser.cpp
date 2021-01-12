@@ -7,6 +7,9 @@
 using namespace std;
 
 string Appetiser::toString() {
+    /*
+     * Creates the overridden toString.
+     */
     stringstream stream;
     stream << fixed << setprecision(2) << price;
     string returnString;
@@ -26,5 +29,13 @@ Appetiser::Appetiser(string name, float price, int calories, string shareable, s
     this->calories = calories;
     this->shareable = move(shareable);
     this->twoForOne = move(twoForOne);
+}
+
+std::string Appetiser::getShareable() {
+    return shareable;
+}
+
+std::string Appetiser::getTwoForOne() {
+    return twoForOne;
 }
 

@@ -58,10 +58,13 @@ int main()
 		}
 		else if (command.compare("add") == 0)
 		{
-		    if(stoi(parameters[1]) > menu.items.size()){
+		    /*
+		     * Error checking for the size of the array, should exit out nicely if it fails.
+		     */
+		    if(stoi(parameters[1]) > menu.getItems().size()){
                 throw invalid_argument("Received number too large!");
 		    }
-			Item* choice = menu.items[stoi(parameters[1]) - 1];  // you need to instantiate this using the menu object!
+			Item* choice = menu.getItems()[stoi(parameters[1]) - 1];  // you need to instantiate this using the menu object!
 			order.add(choice);
 
 			// You may also wish to implement the ability to add multiple items at once!
@@ -69,13 +72,20 @@ int main()
 		}
 		else if (command.compare("remove") == 0)
 		{
-            if(stoi(parameters[1]) > order.items.size()){
+            /*
+            * Error checking for the size of the array, should exit out nicely if it fails.
+            */
+            if(stoi(parameters[1]) > order.getItems().size()){
                 throw invalid_argument("Received number too large!");
             }
             order.remove(stoi(parameters[1]) - 1);
 		}
 		else if (command.compare("checkout") == 0)
 		{
+		    /*
+		     * Asks if the user wants to finish their order and calls the specific to string
+		     * and printReceipt method to make the txt file.
+		     */
 		    string userOrder = order.toString();
             cout << userOrder;
             string userInput;
