@@ -61,12 +61,13 @@ int main()
 		    /*
 		     * Error checking for the size of the array, should exit out nicely if it fails.
 		     */
-		    if(stoi(parameters[1]) > menu.getItems().size()){
-                throw invalid_argument("Received number too large!");
-		    }
-			Item* choice = menu.getItems()[stoi(parameters[1]) - 1];  // you need to instantiate this using the menu object!
-			order.add(choice);
-
+		    for (int i = 1; i < parameters.size(); i++){
+                if(stoi(parameters[i]) > menu.getItems().size()){
+                    throw invalid_argument("Received number too large!");
+                }
+                Item* choice = menu.getItems()[stoi(parameters[i]) - 1];  // you need to instantiate this using the menu object!
+                order.add(choice);
+            }
 			// You may also wish to implement the ability to add multiple items at once!
 			// e.g. add 1 5 9
 		}
