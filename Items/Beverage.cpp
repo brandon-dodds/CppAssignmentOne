@@ -23,7 +23,7 @@ std::string Beverage::toString() {
 }
 
 bool Beverage::isAlcoholic() {
-    return false;
+    return abv > 0;
 }
 
 Beverage::Beverage(const std::string &name, float price, int calories, int volume, float abv) {
