@@ -12,8 +12,6 @@ public:
     void add(Item *pItem);
     static void printReceipt(const std::string& fileString);
     void remove(int userInputIndex);
-
-private:
 };
 
 
