@@ -105,11 +105,9 @@ int main()
 		}
 		else if (command.compare("help") == 0)
 		{
-
+            cout << "Menu to print menu. Checkout to checkout. Add and remove index!";
 		}
-
 		parameters.clear();
-
 	}
 
 	cout << "Press any key to quit...";
