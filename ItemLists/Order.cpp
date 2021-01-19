@@ -62,7 +62,9 @@ vector<float> Order::calculateTotal() {
         if (auto *appetiser = dynamic_cast<Appetiser *>(item)) {
             if (appetiser->getTwoForOne() == "y") {
                 total241 += 1;
-                saving241 = appetiser->getPrice();
+                if(saving241 == 0 || saving241 > appetiser->getPrice()){
+                    saving241 = appetiser->getPrice();
+                }
             }
         }
     }
