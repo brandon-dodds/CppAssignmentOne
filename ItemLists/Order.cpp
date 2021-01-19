@@ -56,6 +56,7 @@ vector<float> Order::calculateTotal() {
     float total = 0;
     int total241 = 0;
     float saving241 = 0;
+    float total241savings = 0;
     for(auto item : items) {
         total += item->getPrice();
         if (auto *appetiser = dynamic_cast<Appetiser *>(item)) {
@@ -67,8 +68,9 @@ vector<float> Order::calculateTotal() {
     }
     for(int i = 0; i < total241 / 2; i++){
         total -= saving241;
+        total241savings += saving241;
     }
-    return vector<float>{total, saving241};
+    return vector<float>{total, total241savings};
 }
 
 void Order::printReceipt(const std::string& fileString) {

@@ -22,6 +22,7 @@ Good luck!
 #include <iostream>
 #include <vector>
 #include <cstring>
+#include <algorithm>
 
 using namespace std;
 
@@ -76,10 +77,17 @@ int main()
             /*
             * Error checking for the size of the array, should exit out nicely if it fails.
             */
-            if(stoi(parameters[1]) > order.getItems().size()){
-                throw invalid_argument("Received number too large!");
+            vector<int> indexesToRemove;
+            for(int i = 1; i < parameters.size(); i++){
+                if(stoi(parameters[i]) > order.getItems().size()){
+                    throw invalid_argument("Received number too large!");
+                }
+                indexesToRemove.push_back(stoi(parameters[i]));
             }
-            order.remove(stoi(parameters[1]) - 1);
+            sort(indexesToRemove.rbegin(), indexesToRemove.rend());
+            for(int i : indexesToRemove){
+                order.remove(i - 1);
+            }
 		}
 		else if (command.compare("checkout") == 0)
 		{
