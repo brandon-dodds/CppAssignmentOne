@@ -102,6 +102,7 @@ int main()
             if (userInput == "y"){
                 Order::printReceipt(userOrder);
             }
+            cin.ignore();
 		}
 		else if (command.compare("help") == 0)
 		{
